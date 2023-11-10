@@ -9,8 +9,10 @@ functions = [list(map(int, input().split(','))) for i in range(n)]
 
 
 # Visualization
+fig = plt.figure()
+ax = fig.add_subplot()
 for a, b in functions:
-    plt.plot(np.array([-3, 3]), np.array([a * -3 + b, a * 3 + b]))
+    ax.plot(np.array([-3, 3]), np.array([a * -3 + b, a * 3 + b]))
 
 
 # Sorting by the line slopes
@@ -55,5 +57,6 @@ while not isFound:
     
 print(minPoint, minValue)
 
-plt.plot([minPoint], [minValue], 'o', color="red")
+ax.plot([minPoint], [minValue], 'o', color="red")
+ax.text(minPoint - 1, minValue + 3, "%.2f, %.2f" %(minPoint, minValue), style='italic',bbox={'facecolor': 'red', 'alpha': 0.5, 'pad': 5})
 plt.show()     
