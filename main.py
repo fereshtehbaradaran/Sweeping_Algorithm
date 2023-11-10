@@ -17,7 +17,7 @@ for a, b in functions:
 
 # Sorting by the line slopes
 sortedFunctions = sort(functions)
-print(sortedFunctions)
+
 
 # Find min of max
 currentFuncIndex = 0
