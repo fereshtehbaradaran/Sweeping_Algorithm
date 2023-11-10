@@ -9,13 +9,13 @@ functions = [list(map(int, input().split(','))) for i in range(n)]
 
 
 # Visualization
-for i in range(n):
-    plt.plot(np.array([-3, 3]), np.array([functions[i][0] * -3 + functions[i][1], functions[i][0] * 3 + functions[i][1]]))
+for a, b in functions:
+    plt.plot(np.array([-3, 3]), np.array([a * -3 + b, a * 3 + b]))
 
 
 # Sorting by the line slopes
 sortedFunctions = sort(functions)
-
+print(sortedFunctions)
 
 # Find min of max
 currentFuncIndex = 0
@@ -34,12 +34,13 @@ while not isFound:
     
     for i in range(n):
         
-        if i not in visitedLines:
+        a2, b2 = sortedFunctions[i]
+        
+        if i not in visitedLines and a1 != a2:
             
-            a2, b2 = sortedFunctions[i]
             temp = (b2 - b1) / (a1 - a2)
             
-            if maxX == "" or f(temp) >= f(maxX):
+            if maxX == "" or temp <= maxX:
                 maxX = temp
                 nextFuncIndex = i
             
@@ -55,4 +56,4 @@ while not isFound:
 print(minPoint, minValue)
 
 plt.plot([minPoint], [minValue], 'o', color="red")
-plt.show()        
+plt.show()     
