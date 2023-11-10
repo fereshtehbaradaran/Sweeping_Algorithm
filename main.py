@@ -58,5 +58,5 @@ while not isFound:
 print(minPoint, minValue)
 
 ax.plot([minPoint], [minValue], 'o', color="red")
-ax.text(minPoint - 1, minValue + 3, "%.2f, %.2f" %(minPoint, minValue), style='italic',bbox={'facecolor': 'red', 'alpha': 0.5, 'pad': 5})
+ax.text(minPoint, minValue + 3, "%.2f, %.2f" %(minPoint, minValue), style='italic',bbox={'facecolor': 'red', 'alpha': 0.5, 'pad': 5})
 plt.show()     
