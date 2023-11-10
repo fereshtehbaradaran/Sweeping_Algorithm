@@ -34,7 +34,7 @@ The final min of max value represents the minimum of the maximum values of all t
 -x + 2
 3x + 4
 ```
-![Alt text](/HW1/Screenshot_20230102_115032.png)
+![Alt text](/example_img/img.png)
 
 ```
 -2x + 3
@@ -48,4 +48,4 @@ x + 2
 5x + 6
 8x + 1
 ```
-![Alt text](/HW1/Screenshot_20230102_115032.png)
+![Alt text](/example_img/img2.png)
