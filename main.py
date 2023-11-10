@@ -22,7 +22,7 @@ sortedFunctions = sort(functions)
 # Find min of max
 currentFuncIndex = 0
 visitedLines = []
-minPoint = ""
+minPoint = None
 minValue = -1
 isFound = False
 
@@ -31,7 +31,7 @@ while not isFound:
     a1, b1 = sortedFunctions[currentFuncIndex]
     f = lambda x: a1 * x + b1
     
-    maxX = minPoint
+    maxX = None
     nextFuncIndex = currentFuncIndex
     
     for i in range(n):
@@ -42,12 +42,13 @@ while not isFound:
             
             temp = (b2 - b1) / (a1 - a2)
             
-            if maxX == "" or temp <= maxX:
-                maxX = temp
-                nextFuncIndex = i
+            if maxX == None or temp <= maxX:
+                if minPoint == None or temp >= minPoint:
+                    maxX = temp
+                    nextFuncIndex = i
             
                                     
-    if minPoint == "" or (maxX > minPoint and f(maxX) < minValue):
+    if minPoint == None or (f(maxX) < minValue):
         minPoint = maxX
         minValue = f(maxX)
     else:
